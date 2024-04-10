@@ -14,6 +14,8 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <cfloat>
+#include <cmath>
 
 class ScalarConverter {
 

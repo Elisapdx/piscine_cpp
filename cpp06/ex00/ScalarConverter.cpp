@@ -32,12 +32,12 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &copy) {
 
 void ScalarConverter::convert(std::string str)
 {
-	double c = std::stod(str.c_str());
+	double c = atof(str.c_str());
 
 	/*--------CHAR---------*/
 	std::cout << "char: ";
 	
-	if (c < 0 || c > 127 || isnan(c) || isinf(c))
+	if (c < 0 || c > 127 || std::isnan(c) || std::isinf(c))
 		std::cout << "Impossible";
 	else if (c < 32 || c > 126)
 		std::cout << "Non displayable";
@@ -48,7 +48,7 @@ void ScalarConverter::convert(std::string str)
 	/*--------INT---------*/
 	std::cout << "int: ";
 
-	if (isnan(c) || isinf(c))
+	if (std::isnan(c) || std::isinf(c))
 		std::cout << "Impossible";
 	else
 		std::cout << static_cast<int>(c);

@@ -22,12 +22,19 @@ int main() {
 	vec.push_back(5);
 
 	int valueToFind = 6;
+	int valueToFind2 = 3;
 	int index = easyfind(vec, valueToFind);
+	int index2 = easyfind(vec, valueToFind2);
 
 	if (index != -1) {
 		std::cout << "La valeur " << valueToFind << " a été trouvée à l'index : " << index << std::endl;
 	} else {
 		std::cout << "La valeur " << valueToFind << " n'a pas été trouvée dans le vecteur." << std::endl;
+	}
+	if (index2 != -1) {
+		std::cout << "La valeur " << valueToFind2 << " a été trouvée à l'index : " << index2 << std::endl;
+	} else {
+		std::cout << "La valeur " << valueToFind2 << " n'a pas été trouvée dans le vecteur." << std::endl;
 	}
 
 	return 0;

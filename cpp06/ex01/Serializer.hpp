@@ -13,6 +13,8 @@
 #pragma once
 #include <iostream>
 
+typedef unsigned long uintptr_t;
+
 struct Data {
 	
 	std::string name;

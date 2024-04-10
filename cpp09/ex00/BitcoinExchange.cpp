@@ -81,14 +81,13 @@ std::string BitcoinExchange::intToChar(int number) {
 double BitcoinExchange::checkDateBD(std::string date)
 {
 	std::map<std::string, double>::iterator it = this->map.find(date);	// recherche de la cle exacte 
-	
 	if (it != this->map.end())
 		return it->second;		// retourne la valeur correspondante
 
 	if (this->map.empty() || this->map.begin()->first > date)
 		return 0;		// si la map est vide ou si la clé est inférieure à toutes les clés dans la map
+	// it = std::prev(this->map.upper_bound(date));
 
-	it = std::prev(this->map.upper_bound(date));
 	return it->second;		// std::map::upper_bound pour trouver le premier élément dont la clé est strictement supérieure à la clé donnée et std::prev pour obtenir l'élément précédent dans la map.
 }
 
@@ -154,7 +153,7 @@ void	BitcoinExchange::input(std::string str) {
 
 	this->map = data();
 	
-	file.open(str);
+	file.open(str.c_str());
 	if (!file)
 	{
 		std::cout << "Error: could not open file." << line << std::endl;

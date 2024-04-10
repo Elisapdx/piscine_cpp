@@ -12,8 +12,7 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm::AForm("robotomy request", 72, 45), _target(target) {
-	
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm::AForm("shrubbery creation", 72, 45), _target(target) {
 	std::cout << "ShrubberyCreationForm constructor called for " << "\033[31m" << this->getTarget() << "\033[0m" << std::endl;
 	
 }
@@ -50,7 +49,8 @@ void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
 		throw AForm::GradeTooLowException();
 	if (!this->getIsSignedBool())
 		throw ShrubberyCreationForm::NotSigned();
-	fd.open(this->_target + "_shrubbery", std::ios::out);
+	std::string path = this->_target + "_shrubbery";
+	fd.open(path.c_str(), std::ios::out);
 	fd << "   W       A\n  WWW     AAA\n WWWWW   AAAAA\n  |||     |||\n \n    w \n   www \n  wwwww \n wwwwwww \n   |||  \n";
 	fd.close();
 	std::cout << "The ascii trees were written in the file " << this->getTarget() << "_shrubbery" << std::endl;

@@ -63,7 +63,6 @@ AForm	*Intern::makeForm(std::string type, std::string target)
 		case 2:
 			std::cout << "Intern creates shrubbery creation form" << std::endl;
 			return (new ShrubberyCreationForm(target));
-			break;
 		default:
 			std::cout << "Form type doesn't exist." << std::endl;
 			throw NoMatchFound();

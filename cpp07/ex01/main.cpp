@@ -12,6 +12,8 @@
 
 #include "iter.hpp"
 #include <iostream>
+#include <cstring>
+
 
 void putchar(char c)
 {

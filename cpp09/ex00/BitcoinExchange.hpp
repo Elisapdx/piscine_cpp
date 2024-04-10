@@ -19,6 +19,8 @@
 #include <stdexcept>
 #include <sstream>
 #include <algorithm>
+#include <iterator>
+#include <vector>
 
 class BitcoinExchange {
 
